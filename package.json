@@ -1,8 +1,8 @@
 {
   "name": "pantsy",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Brain that tells you to put on pants",
-  "main": "pants_brain.js",
+  "main": "dist/pants_brain.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rimraf dist/ && babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files",
