@@ -68,11 +68,11 @@ exports.run = function(state, city, existing_data) {
 
 
 function computeGuess(temps, existing_data) {
+  // const net = new brain.NeuralNetwork();
 
-  console.log('temps', temps);
-  console.log('existing', existing_data);
-  
-  const net = new brain.NeuralNetwork();
+  var net = new brain.NeuralNetwork({
+    activation: 'relu' // activation function
+  });
 
   const input = {h6: null, h8: null, h10: null, h12: null, h14: null, h16: null, h18: null}
   _.each(temps, (temp) => {
@@ -113,7 +113,16 @@ function computeGuess(temps, existing_data) {
     {input: { h6: 0.1, h8: 0.1, h10: 0.3, h12: 0.3, h14: 0.1, h16: 0.1, h18: 0.1 }, output: {pants: 1}},
     {input: { h6: 0.3, h8: 0.33, h10: 0.44, h12: 0.5, h14: 0.44, h16: 0.4, h18: 0.4 }, output: {pants: 1}},
     {input: { h6: 0.35, h8: 0.4, h10: 0.48, h12: 0.52, h14: 0.5, h16: 0.48, h18: 0.47 }, output: {shorts: 1}},
-    {input: { h6: 0.03, h8: 0.1, h10: 0.15,h12: 0.2, h14: 0.2, h16: 0.25, h18: 0.2 }, output: {pants: 1}}
+    {input: { h6: 0.03, h8: 0.1, h10: 0.15,h12: 0.2, h14: 0.2, h16: 0.25, h18: 0.2 }, output: {pants: 1}},
+    { input: 
+      { h6: 0.31666666666666665,
+        h8: 0.3,
+        h10: 0.3333333333333333,
+        h12: 0.4166666666666667,
+        h14: 0.4666666666666667,
+        h16: 0.5166666666666667,
+        h18: 0.5333333333333333 },
+     output: { pants: 1 } }
   ]
 
   net.train(training_data.concat(existing_data))

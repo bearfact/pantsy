@@ -16,7 +16,7 @@ var data = [{ input: { h6: 0.16666666666666666,
     s: 1,
     w: 0 },
   output: { pants: 1 } }];
-_pants_brain2.default.run('OK', 'Crowder', data).then(function (value) {
+_pants_brain2.default.run('LA', 'New_Orleans', data).then(function (value) {
   console.log(value);
 }, function (error) {
   console.log(error);

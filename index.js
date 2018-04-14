@@ -12,7 +12,7 @@ const data = [
     w: 0 },
  output: { pants: 1 } } 
 ]
-pb.run('OK', 'Crowder', data)
+pb.run('LA', 'New_Orleans', data)
 .then(function (value) {
   console.log(value)
 }, function (error) {
